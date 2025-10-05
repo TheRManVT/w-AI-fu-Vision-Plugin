@@ -53,8 +53,8 @@ const webcamOpts = {
 let PROMPTS = {
     webcam_analysis: "Describe what you see in this webcam image. Focus on the person, their appearance, expression, and any notable details. Be concise but descriptive.",
     screenshot_analysis: "Describe what you see on this screen. Focus on the application, its content, and text. Be concise but descriptive.",
-    webcam_context: "Roman asked you to look at them through webcam.",
-    screenshot_context: "Roman asked you to look at his screen."
+    webcam_context: "User asked you to look at them through webcam.",
+    screenshot_context: "User asked you to look at his screen."
 };
 
 /**
@@ -350,7 +350,7 @@ async function analyzeImage(imagePath, type) {
  */
 async function processVisionRequest(type, userName) {
     if (!userName) {
-        userName = "Roman";
+        userName = "User";
     }
     
     if (isProcessingVision) {
@@ -410,22 +410,22 @@ async function processVisionRequest(type, userName) {
 exports.onHandleCommand = async (command, trusted) => {
     // Check for manual commands first
     if (command.startsWith("!webcam")) {
-        await processVisionRequest("webcam", "Roman");
+        await processVisionRequest("webcam", "User");
         return true;
     }
     
     if (command.startsWith("!screenshot")) {
-        await processVisionRequest("screenshot", "Roman");
+        await processVisionRequest("screenshot", "User");
         return true;
     }
     
     if (command.startsWith("!look at me") || command.startsWith("!see me")) {
-        await processVisionRequest("webcam", "Roman");
+        await processVisionRequest("webcam", "User");
         return true;
     }
     
     if (command.startsWith("!look at screen") || command.startsWith("!look at my screen")) {
-        await processVisionRequest("screenshot", "Roman");
+        await processVisionRequest("screenshot", "User");
         return true;
     }
     
@@ -477,7 +477,7 @@ exports.onHandleCommand = async (command, trusted) => {
             lastVisionTimestamp = now;
             
             // Process vision SYNCHRONOUSLY
-            const description = await processVisionRequest(wakeType, "Roman");
+            const description = await processVisionRequest(wakeType, "User");
             
             // Return true to consume the wake phrase message
             // The AI will respond to the queued !say command instead
@@ -511,9 +511,9 @@ exports.onInputRequest = () => {
 exports.onTwitchRewardRedeem = (reward_name, user_name) => {
     logger.print(`Vision Plugin: Twitch reward "${reward_name}" by ${user_name}`);
     
-    if (reward_name === "Show me your face" || reward_name === "Look at chat" || reward_name === "Ronika looks at you") {
+    if (reward_name === "Show me your face" || reward_name === "Look at chat" || reward_name === "AI looks at you") {
         processVisionRequest("webcam", user_name);
-    } else if (reward_name === "Show me your screen" || reward_name === "What are you doing?" || reward_name === "Ronika looks at screen") {
+    } else if (reward_name === "Show me your screen" || reward_name === "What are you doing?" || reward_name === "AI looks at screen") {
         processVisionRequest("screenshot", user_name);
     }
 };
@@ -540,4 +540,5 @@ exports.onQuit = () => {
     } catch (err) {
         logger.warn("Vision Plugin: Cleanup failed:", err);
     }
+
 };
