@@ -36,6 +36,7 @@ pip install Pillow
 1) Download this repository
 2) Copy the VisionPlugin folder to <w-AI-fu_v2 root folder>/userdata/plugins/
 3) Your structure should look like:
+```
    w-AI-fu_v2/
    └── userdata/
        └── plugins/
@@ -44,6 +45,7 @@ pip install Pillow
                ├── plugin.json
                ├── webcam_detector.js
                └── convert_bmp.py
+```
 
 ### 4. Configure API Key
 Add your OpenAI API key to userdata/auth/auth.json:
