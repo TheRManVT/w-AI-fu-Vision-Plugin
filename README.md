@@ -92,12 +92,12 @@ device: 2,  // Change to your camera index
 ## Customization
 ### Prompt Files
 After first run, edit these files in VisionPlugin/prompts/:
-
+```
 webcam_analysis.txt - Instructions for analyzing webcam images
 screenshot_analysis.txt - Instructions for analyzing screenshots
 webcam_context.txt - Context message when looking at webcam
 screenshot_context.txt - Context message when looking at screen
-
+```
 After editing, run !vision-reload-prompts or restart w-AI-fu.
 
 ### Wake Phrases
