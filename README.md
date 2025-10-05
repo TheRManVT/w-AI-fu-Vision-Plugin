@@ -34,7 +34,7 @@ pip install Pillow
 
 ### 3. Install Plugin
 1) Download this repository
-2) Copy the VisionPlugin folder to <w-AI-fu_v2 root folder>/userdata/plugins/
+2) Copy the VisionPlugin folder to `<w-AI-fu_v2 root folder>/userdata/plugins/`
 3) Your structure should look like:
 ```
    w-AI-fu_v2/
@@ -48,7 +48,7 @@ pip install Pillow
 ```
 
 ### 4. Configure API Key
-Add your OpenAI API key to userdata/auth/auth.json:
+Add your OpenAI API key to `userdata/auth/auth.json`:
 ```
 {
   "openai": {
@@ -62,7 +62,7 @@ Run the webcam detector to find your camera:
 ```
 python webcam_detector.py
 ```
-Then edit index.js line ~48:
+Then edit `index.js` line ~48:
 ```
 device: 2,  // Change to your camera index
 ```
@@ -91,17 +91,17 @@ device: 2,  // Change to your camera index
 
 ## Customization
 ### Prompt Files
-After first run, edit these files in VisionPlugin/prompts/:
+After first run, edit these files in `VisionPlugin/prompts/`:
 ```
 webcam_analysis.txt - Instructions for analyzing webcam images
 screenshot_analysis.txt - Instructions for analyzing screenshots
 webcam_context.txt - Context message when looking at webcam
 screenshot_context.txt - Context message when looking at screen
 ```
-After editing, run !vision-reload-prompts or restart w-AI-fu.
+After editing, run `!vision-reload-prompts` or restart w-AI-fu.
 
 ### Wake Phrases
-Edit index.js around line 28:
+Edit `index.js` around line 28:
 ```
 javascriptconst WAKE_PHRASES = {
     WEBCAM: ["look at me", "see me", /* add your phrases */],
@@ -109,7 +109,7 @@ javascriptconst WAKE_PHRASES = {
 };
 ```
 ### Vision Model
-Edit index.js around line 37:
+Edit `index.js` around line 37:
 ```
 javascriptconst VISION_CONFIG = {
     model: "gpt-4o-mini",  // Options: gpt-4o, gpt-4o-mini, gpt-4-turbo
@@ -118,7 +118,7 @@ javascriptconst VISION_CONFIG = {
 ```
 
 ### Cooldown Period
-Edit index.js around line 16:
+Edit `index.js` around line 16:
 ```
 javascriptconst VISION_COOLDOWN = 10000; // milliseconds (10 seconds)
 ```
@@ -133,15 +133,15 @@ javascriptconst VISION_COOLDOWN = 10000; // milliseconds (10 seconds)
 
 ## Troubleshooting
 ### Webcam Not Working
-1) Run python webcam_detector.py to find camera index
-2) Check no other apps are using camera (OBS, Zoom, Teams)
-3) Update device: value in index.js
-4) Verify convert_bmp.py exists in plugin folder
+- Run `python webcam_detector.py` to find camera index
+- Check no other apps are using camera (OBS, Zoom, Teams)
+- Update `device:` value in `index.js`
+- Verify `convert_bmp.py` exists in plugin folder
 
 ### API Errors (400/401)
-- 400 "unsupported image format": BMP conversion failed, check Python/Pillow installed
-- 401 "unauthorized": Check API key in auth.json
-- 404 "model not found": Update model name to gpt-4o-mini
+- `400 "unsupported image format"`: BMP conversion failed, check Python/Pillow installed
+- `401 "unauthorized"`: Check API key in auth.json
+- `404 "model not found"`: Update model name to gpt-4o-mini
 
 ### Vision Triggers Multiple Times
 - Check cooldown is set (default 10 seconds)
@@ -149,11 +149,11 @@ javascriptconst VISION_COOLDOWN = 10000; // milliseconds (10 seconds)
 
 ### Screenshot Works But Webcam Doesn't
 - Webcam requires BMP→PNG conversion via Python
-- Ensure Pillow is installed: pip install Pillow
-- Check convert_bmp.py has execute permissions
+- Ensure Pillow is installed: `pip install Pillow`
+- Check `convert_bmp.py` has execute permissions
 
 ### Performance Issues
-Reduce image quality in index.js:
+Reduce image quality in `index.js`:
 ```
 const webcamOpts = {
     width: 640,      // Lower resolution
