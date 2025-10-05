@@ -42,6 +42,7 @@ pip install Pillow
            └── VisionPlugin/
                ├── index.js
                ├── plugin.json
+               ├── webcam_detector.js
                └── convert_bmp.py
 
 ### 4. Configure API Key
