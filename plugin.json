@@ -1,0 +1,20 @@
+{
+    "name": "Vision Plugin",
+    "description": "Allows AI to see through webcam or screenshots using vision models",
+    "author": "Roman",
+    "version": "1.0.0",
+    "npm-dependencies": {
+        "screenshot-desktop": "^1.12.7",
+        "node-webcam": "^0.8.0",
+        "axios": "^1.6.0"
+    },
+    "subscribes": {
+        "load": "onLoad",
+        "input-source": "onInputRequest",
+        "command-handling": "onHandleCommand",
+        "response-handling": "onResponse",
+        "twitch-reward-redeem": "onTwitchRewardRedeem",
+        "quit": "onQuit"
+    },
+    "activated": true
+}
