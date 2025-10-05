@@ -70,16 +70,16 @@ device: 2,  // Change to your camera index
 ## Usage
 ### Wake Phrases (Natural Speech/Text)
 #### Webcam:
-"Look at me"
-"See me"
-"Check my webcam"
-"What do you see?"
+- "Look at me"
+- "See me"
+- "Check my webcam"
+- "What do you see?"
 
 #### Screenshot:
-"Look at my screen"
-"See my screen"
-"Check my screen"
-"What's on screen?"
+- "Look at my screen"
+- "See my screen"
+- "Check my screen"
+- "What's on screen?"
 
 ### Manual Commands
 ```
