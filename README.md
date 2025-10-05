@@ -1,6 +1,6 @@
 # w-AI-fu Vision Plugin
 
-A vision plugin for [w-AI-fu](https://github.com/wAIfu-DEV/w-AI-fu_v2) that enables AI VTubers to see through webcam or screenshots using GPT-4 Vision API. Supports natural wake phrases in speech/text input and Twitch channel point integration.
+A vision plugin for w-AI-fu_v2 that enables AI VTubers to see through webcam or screenshots using GPT-4 Vision API. Supports natural wake phrases in speech/text input and Twitch channel point integration(not tested).
 
 ## Features
 
@@ -165,3 +165,11 @@ Use faster model:
 ```
 model: "gpt-4o-mini"  // Cheaper and faster than gpt-4o
 ```
+
+# NOTES
+```
+- I am not claiming to be the developer of w_AI_fu nor any other components needed to run this plugin.
+- Only works with already downloaded w_AI_fu v2/w_AI_fu v2.R. No copies will be distrubed by the developer of this plugin nor the original developer of w_AI_fu
+- This plugin was made in "collaboration" with Claude/Sonnet 4.5.
+- This plugin has been tested with w_AI_fu v2 with slight modifications(none are in conflict with this plugin).
+- Any issues, not outlined in "Troubleshooting", that can occur will not be fixed by neither myself nor the original developer of w_AI_fu
