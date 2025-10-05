@@ -1,13 +1,13 @@
 # w-AI-fu Vision Plugin
 
-A vision plugin for w-AI-fu_v2 that enables AI VTubers to see through webcam or screenshots using GPT-4 Vision API. Supports natural wake phrases in speech/text input and Twitch channel point integration(not tested).
+A vision plugin for w-AI-fu_v2 that enables AI VTubers to see through webcam or screenshots using GPT-4 Vision API. Supports natural wake phrases in speech/text input and Twitch channel point integration.
 
 ## Features
 
 - 🎥 **Webcam capture** - AI can see you through your camera
 - 🖥️ **Screenshot capture** - AI can see your screen
 - 🗣️ **Wake phrase detection** - Natural language triggers like "look at me" or "look at my screen"
-- 🎮 **Twitch integration** - Channel point rewards for viewer interaction
+- 🎮 **Twitch integration** - Channel point rewards for viewer interaction (Not tested, so feedback apreciated)
 - ⚙️ **Customizable prompts** - Edit vision analysis behavior via text files
 - 🚫 **Anti-loop protection** - 10-second cooldown prevents infinite vision triggers
 - 💾 **Automatic image saving** - Keeps permanent copies of captures
