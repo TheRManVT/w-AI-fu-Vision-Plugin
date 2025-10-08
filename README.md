@@ -103,7 +103,7 @@ After editing, run `!vision-reload-prompts` or restart w-AI-fu.
 ### Wake Phrases
 Edit `index.js` around line 28:
 ```
-javascriptconst WAKE_PHRASES = {
+const WAKE_PHRASES = {
     WEBCAM: ["look at me", "see me", /* add your phrases */],
     SCREENSHOT: ["look at screen", /* add your phrases */]
 };
@@ -111,7 +111,7 @@ javascriptconst WAKE_PHRASES = {
 ### Vision Model
 Edit `index.js` around line 37:
 ```
-javascriptconst VISION_CONFIG = {
+const VISION_CONFIG = {
     model: "gpt-4o-mini",  // Options: gpt-4o, gpt-4o-mini, gpt-4-turbo
     max_tokens: 500        // Adjust response length
 };
@@ -120,7 +120,7 @@ javascriptconst VISION_CONFIG = {
 ### Cooldown Period
 Edit `index.js` around line 16:
 ```
-javascriptconst VISION_COOLDOWN = 10000; // milliseconds (10 seconds)
+const VISION_COOLDOWN = 10000; // milliseconds (10 seconds)
 ```
 
 ## How It Works
